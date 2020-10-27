@@ -30,6 +30,7 @@ app.use(methodOverride('_method'));
 //ROUTE
 //Index Route
 // ABOVE our app.get()
+app.use('/albums', require('./controllers/albumsController'));
 app.use('/users', require('./controllers/usersController'));
 // option 2
 // const usersController=require('./controllers/usersController')

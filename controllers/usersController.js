@@ -1,6 +1,7 @@
 const user = require('../models/user');
 
 const router = require('express').Router();
+const dayjs=require('dayjs');
 const User = require('../models/user').User;
 const Tweet = require('../models/user').Tweet;
 //descrtucting structure combining line 2 and 3 corresponding line 16 of user.js
@@ -13,8 +14,9 @@ router.get('/new', (req, res) => {
 // ADD EMPTY FORM TO USER SHOW PAGE TO ADD TWEET TO A USER
 router.get('/:userId', (req, res) => {
     // find user in db by id and add new tweet
+   
     User.findById(req.params.userId, (error, user) => {
-      res.render('users/show.ejs', { user });
+      res.render('users/show.ejs', { user});
     });
   });
 //index

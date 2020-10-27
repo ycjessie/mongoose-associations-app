@@ -1,5 +1,7 @@
 <p> Home Page</p>
+<div>
 <ul>
+
     <% for( let i = 0; i < data.length; i++ ) { %>
     <li>
       <a href="/users/<%=data[i]._id%>"> <%= data[i].name%> </a>
@@ -11,3 +13,4 @@
     </li>
     <% } %>
   </ul>
+</div>

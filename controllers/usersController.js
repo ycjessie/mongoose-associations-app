@@ -14,9 +14,9 @@ router.get('/new', (req, res) => {
 // ADD EMPTY FORM TO USER SHOW PAGE TO ADD TWEET TO A USER
 router.get('/:userId', (req, res) => {
     // find user in db by id and add new tweet
-   
+    let now = dayjs(User.createdAt);
     User.findById(req.params.userId, (error, user) => {
-      res.render('users/show.ejs', { user});
+      res.render('users/show.ejs', { user,now });
     });
   });
 //index

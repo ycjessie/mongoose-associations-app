@@ -11,6 +11,8 @@ mongoose.connect(
     {
         useNewUrlParser:true,
         useUnifiedTopology:true,
+        useCreateIndex: true,
+        useFindAndModify:false,
       
     },
     ()=>{
@@ -32,6 +34,8 @@ app.use(methodOverride('_method'));
 // ABOVE our app.get()
 app.use('/albums', require('./controllers/albumsController'));
 app.use('/users', require('./controllers/usersController'));
+app.use('/ingredients', require('./controllers/ingredientsController'));
+app.use('/foods', require('./controllers/foodsController'));
 // option 2
 // const usersController=require('./controllers/usersController')
 // app.use('/users',usersController);

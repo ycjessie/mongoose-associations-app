@@ -1,16 +1,1 @@
 <p> Home Page</p>
-<div>
-<ul>
-
-    <% for( let i = 0; i < data.length; i++ ) { %>
-    <li>
-      <a href="/users/<%=data[i]._id%>"> <%= data[i].name%> </a>
-      
-      <br />
-      <form action="/users/<%=data[i]._id%>/tweets/<%= data[i].tweets._id%>?_method=DELETE" method="POST">
-      <button>Delete</button>
-      </form>
-    </li>
-    <% } %>
-  </ul>
-</div>
